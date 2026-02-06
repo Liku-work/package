@@ -1,0 +1,10 @@
+{
+  "liku.server": {
+    "host": "127.0.0.1",
+    "port": 3960,
+    "protocol": "http",
+    "ssl": {
+      "enabled": false
+    }
+  }
+}

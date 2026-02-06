@@ -1,0 +1,53 @@
+import { Component, State, OnInit, WebSocketService } from 'liku';
+
+@Component({
+  selector: 'my-app-web-service',
+  type: 'websocket',
+  url: 'ws://localhost:3960'
+})
+export class MyApp implements OnInit {
+  @State() archiveType: string = 'app/webkit.js';
+  @State() module: string = 'config/settings.json';
+  @State() messages: string[] = [];
+  @State() status: string = 'disconnected';
+
+  private socket: WebSocketService;
+
+  constructor(socket: WebSocketService) {
+    this.socket = socket;
+  }
+
+  onInit(): void {
+    this.connect();
+  }
+
+  connect(): void {
+    this.socket.connect().subscribe({
+      open: () => {
+        this.status = 'connected';
+        this.sendMessage('Hi, i am Liku!');
+      },
+      message: (msg: string) => {
+        this.messages.push(msg);
+      },
+      close: () => {
+        this.status = 'disconnected';
+      }
+    });
+  }
+
+  sendMessage(content: string): void {
+    const payload = {
+      archive: this.archiveType,
+      module: this.module,
+      data: content
+    };
+    this.socket.send(JSON.stringify(payload));
+  }
+
+  toggleArchive(): void {
+    this.archiveType = this.archiveType === 'app/webkit.js'
+      ? 'app/liku-core.js'
+      : 'app/webkit.js';
+  }
+}
