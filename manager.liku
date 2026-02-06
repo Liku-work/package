@@ -1,0 +1,6 @@
+Type:script = file_name*
+  on kill -null
+  on start -!! or ""
+  ¡*
+
+  dir ./server
