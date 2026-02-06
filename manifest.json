@@ -1,0 +1,24 @@
+{
+  "name": "Liku",
+  "short_name": "Liku",
+  "version": "0.0.1",
+  "description": "CLI to manage projects in LikuProjects and run an embedded PHP server on Windows.",
+  "author": "Yustin R.N.",
+  "license": "MIT",
+  "homepage": "http://localhost:3960",
+  "commands": {
+    "start": "Start the embedded PHP server on port 3960",
+    "off": "Stop the running server",
+    "list": "List all projects inside LikuProjects",
+    "run -p <project>": "Run a specific project and open it in the browser",
+    "help": "Display available commands",
+    "exit": "Close the CLI"
+  },
+  "projects_dir": "LikuProjects",
+  "default_port": 3960,
+  "platform": "Windows",
+  "icons": {
+    "48": "icons/liku-48.png",
+    "128": "icons/liku-128.png"
+  }
+}
