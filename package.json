@@ -11,7 +11,7 @@
       "created_at": "2026-02-06"
     },
     {
-      "name": "dashboard_pack",
+      "name": "pack",
       "version": "1.2",
       "description": "Dashboard simple con cards y gráficos",
       "source": "https://github.com/tuusuario/liku-templates/dashboard",
