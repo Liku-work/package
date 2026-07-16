@@ -2,7 +2,7 @@
   "packs": [
     {
       "name": "edit",
-      "version": "1.0",
+      "version": "2",
       "description": "Landing page minimal y responsive",
       "source": "https://github.com/tuusuario/liku-templates/landing",
       "preview": "https://raw.githubusercontent.com/tuusuario/liku-templates/main/landing/preview.png",
